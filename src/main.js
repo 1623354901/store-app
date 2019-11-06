@@ -8,10 +8,11 @@ import app from './App.vue'
 
 // 2、顶部区域 
 // 2.1 按需导入 Mint-Ui组件
-import {Header,Swipe, SwipeItem} from 'mint-ui'
+import {Header,Swipe, SwipeItem,Button} from 'mint-ui'
 Vue.component(Header.name,Header)
 Vue.component(Swipe.name,Swipe)
 Vue.component(SwipeItem.name,SwipeItem)
+Vue.component(Button.name,Button)
 // 2.1在app.vue中加入代码
 // 3、底部区域
 // 3.1 使用MUI中的tabber
@@ -36,7 +37,17 @@ import router from './router.js'
 import Vueresource from 'vue-resource'
 Vue.use(Vueresource)
 // 7.2 在相应组件内(HomeContainer)，使用 vue-resource 的this.$http.get 获取数据
-
+// 下面是全局配置根路径的方法
+// Vue.http.options.root='http://vue.studyit.io'
+import Mock from 'mockjs'
+import mockdata from './mock'
+// 11.2 导入格式化时间的插件 moment
+import moment from 'moment'
+// 11、定义全局过滤器
+Vue.filter('dataFormat',function(dataStr,pattern="YYYY-MM-DD HH:mm:ss"){
+  // 11.1安装moment
+  return moment(dataStr).format(pattern)
+})
 
 
 // 1.3 创建一个 vm 实例,在index.html中创建div#app

@@ -4,6 +4,10 @@ import HomeContainer from './components/tabber/HomeContainer.vue'
 import MemberContainer from './components/tabber/MemberContainer.vue'
 import ShopContainer from './components/tabber/ShopContainer.vue'
 import SearchContainer from './components/tabber/SearchContainer.vue'
+// 9.4 导入组件，添加路由
+import NewsList from './components/news/NewsList.vue'
+// 12.2 导入newsinfo组件，添加路由
+import newsinfo from './components/news/newsinfo.vue'
 
 // 3. 创建路由对象
 var router = new VueRouter({
@@ -13,7 +17,9 @@ var router = new VueRouter({
     { path: '/home', component: HomeContainer },
     { path: '/member', component: MemberContainer },
     { path: '/shopcar', component: ShopContainer },
-    { path: '/search', component: SearchContainer }
+    { path: '/search', component: SearchContainer },
+    {path:'/home/newslist',component:NewsList},
+    {path:'/home/newsinfo',component:newsinfo}
     
 
   ],
